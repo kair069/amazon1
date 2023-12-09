@@ -1,0 +1,106 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pagina Principal</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+    <style>
+        body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
+                .iframe-container {
+            position: fixed;
+            bottom: 20px; /* Ajusta la distancia desde la parte inferior */
+            right: 20px; /* Ajusta la distancia desde la derecha */
+            background-color: #fff; /* Color de fondo del contenedor del iframe */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra */
+            border-radius: 10px; /* Bordes redondeados */
+            overflow: hidden; /* Evita que el contenido se desborde */
+        }
+        iframe {
+            border: none; /* Elimina el borde del iframe */
+            width: 400px; /* Ancho del iframe (modificado) */
+            height: 500px; /* Altura del iframe (modificada) */
+        }
+        .toggle-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #3498db; /* Color del botón de minimizar */
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .iframe-icon {
+            position: absolute;
+            top: 20px;
+            right: 60px;
+    </style>
+
+
+</head>
+<!--<body style="background-image:url('https://irp-cdn.multiscreensite.com/b4a272ea/MOBILE/jpg/1829674-image1_%281%29.jpg')">-->
+
+<body style="background-image:url('Imagenes/IMG2Fondo.jpg')">
+<!-- Start Content -->
+<div id="home" class="w3-content">
+
+    <!-- Navbar (Sits on top) -->
+    <div class="w3-top w3-bar w3-xlarge w3-black w3-opacity-min">
+        <a href="http://localhost:1090/restauranteWeb/" class="w3-bar-item w3-button">INICIO</a>
+        <a href="http://localhost:4201/listarv" class="w3-bar-item w3-button">VENTAS</a>
+        <a href="http://localhost:4200/listar" class="w3-bar-item w3-button">CHEFS</a>
+        <a href="http://localhost:1090/restauranteWeb/login" class="w3-bar-item w3-button">LOGEATE</a>
+        <a href="http://localhost:8070/login?logout" class="w3-bar-item w3-button">CARRITO</a>
+        <a href="http://localhost:8760/" class="w3-bar-item w3-button">registry</a>
+        <a href="http://127.0.0.1:5000/" class="w3-bar-item w3-button">PREDICCION DE VENTAS</a>
+    </div>
+
+    <!-- Header image -->
+    <div style="height:800px; background-image:url('Imagenes/IMG1Portada.jpg');background-size:cover">
+    <!--<div style="height:800px; background-image:url('https://totalenergies.pe/system/files/styles/paragraph_media_960/private/atoms/image/_dsc0092.jpg?itok=ooWv-xbq');background-size:cover">-->
+         class="w3-display-container w3-grayscale-min">
+        <div class="w3-display-bottomleft">
+            <span class="w3-tag w3-xlarge">abre de 10am a 12pm</span>
+        </div>
+        <div class="w3-display-middle w3-center">
+            <span class="w3-text-white" style="font-size:100px">EMPRESA<br>Restarutante Web</span>
+            <p><a href="http://localhost:4200/listarq" class="w3-button w3-xxlarge w3-black">Click para ver los PRODUCTOS</a></p>
+        </div>
+    </div>
+
+    <!-- End Content -->
+</div>
+<div class="iframe-container">
+    <img src="https://cdn-icons-png.flaticon.com/512/1698/1698535.png" class="iframe-icon" alt="Icono de Chatbot" width="50px" height="50px"> <!-- Ruta de la imagen del icono -->
+    <iframe src="https://chatbotmai.azurewebsites.net/"></iframe> <!-- Reemplaza "URL_DEL_CHATBOT.html" con la ruta del primer HTML donde está tu chatbot -->
+    <button class="toggle-button" onclick="toggleIframe()">Minimizar</button>
+</div>
+
+<script>
+        const iframeContainer = document.querySelector(".iframe-container");
+        let minimized = false;
+
+        // Función para minimizar/maximizar el iframe
+        function toggleIframe() {
+            if (minimized) {
+                iframeContainer.style.height = "500px"; // Ajusta la altura (modificado)
+                document.querySelector(".toggle-button").innerText = "Minimizar";
+                minimized = false;
+            } else {
+                iframeContainer.style.height = "40px"; // Ajusta la altura
+                document.querySelector(".toggle-button").innerText = "Maximizar";
+                minimized = true;
+            }
+        }
+    </script>
+</body>
+</html>
